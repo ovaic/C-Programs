@@ -1,0 +1,58 @@
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+ /// To find a factorial of given number
+
+int fctl(int);
+
+
+
+int main()
+
+{
+
+    int f=0, sum=0;
+
+    printf("\aEnter a number to get its FACTORIAL: \n");
+
+    scanf("%d",&f);
+
+    f=fctl(f);
+
+
+
+    printf("\nFactorial of given number is: %d\n",f);
+
+    return 0;
+
+}
+
+
+
+int fctl(int num)
+
+{
+
+    int count=1, sum =1;
+
+    count=num +1;
+
+    while(count!=1)
+
+    {
+
+        sum=sum * (count-1);
+
+        count=count-1;
+
+    }
+
+    return sum;
+
+
+
+}
