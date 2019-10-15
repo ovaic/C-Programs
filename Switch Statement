@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+
+
+///switch statement
+
+
+
+int main()
+
+{
+
+    char ch='u';        ///variable ch is initialized then declared
+
+    switch(ch)
+
+    {
+
+        case 't':
+
+        case 'T':
+
+                printf("my name is khan\n");
+
+                break;
+
+        case 'U':
+
+        case 'u':
+
+                printf("are you alright\n");
+
+                break;
+
+    }
+
+
+
+    return 0;
+
+}
