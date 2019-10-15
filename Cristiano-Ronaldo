@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+///ASCII.c
+
+///ASCII CODE DISPLAYER
+
+
+
+int main()
+
+{
+
+    int i=0;
+
+
+
+    printf("ASCII TABLE\n");
+
+    printf("_______________\n\n");
+
+
+
+    while(i<=255)
+
+    {
+
+    printf("%c = %d\n",i,i);
+
+    i++;
+
+    }
+
+
+
+    return 0;
+
+}
