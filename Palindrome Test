@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+
+
+///Palindrome Test
+
+int main()
+
+{
+
+    int reverse=0,n=0,t=0;
+
+    printf("Input the value: ");
+
+    scanf("%d",&n);
+
+    t=n;
+
+    while(t!=0)
+
+    {
+
+        reverse=reverse*10;
+
+        reverse=reverse+t%10;
+
+        t=t/10;
+
+    }
+
+    if (n==reverse)
+
+    {
+
+        printf("Palindrome");
+
+    }
+
+    else
+
+        printf("Not Palindrome");
+
+return 0;
+
+}
+
