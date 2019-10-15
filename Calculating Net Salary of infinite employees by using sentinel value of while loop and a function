@@ -1,0 +1,128 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+
+
+int compute_net_salary(int hours,int rate);
+
+
+
+///11.1 FIZZY
+
+int main()
+
+{
+
+    int reg_no=0,wage_rate=0,hrs=0, sentinel=0,empl = 0,salary=0, sal=0, average=0;
+
+
+
+    while(sentinel!= -1)
+
+    {
+
+         printf("Enter your registration number: ");
+
+         scanf("%d", &reg_no);
+
+
+
+         empl++;
+
+
+
+         printf("Input hourly wage rate: ");
+
+         scanf("%d" , &wage_rate);
+
+
+
+         printf("Input number of hours worked during the week: ");
+
+         scanf("%d",&hrs);
+
+
+
+         salary = ComputeNetSalary(hrs,wage_rate);
+
+
+
+         sal = sal + salary;
+
+
+
+         printf("_____________________________________\n\n");
+
+
+
+         printf("Registration ID: %d\n", reg_no);
+
+         printf("Net Salary is: %d\n", salary);
+
+
+
+         printf("End?(0 to continue and -1 to end)  ");
+
+         scanf("%d", &sentinel);
+
+    }
+
+
+
+    average = sal/empl;
+
+    printf("Average Salary is: %d", average);
+
+
+
+    return 0;
+
+}
+
+
+
+int ComputeNetSalary(int hours, int rate)
+
+{
+
+    int netwage=0, grosspay=0, overhrs=0, tax=0;
+
+
+
+    overhrs = hours - 40;
+
+
+
+    if (overhrs<0)
+
+    {
+
+        grosspay = (hours*rate);
+
+
+
+    }
+
+    else
+
+    {
+
+        grosspay = (hours*rate) + (overhrs*rate*1.5);
+
+
+
+    }
+
+    tax = (0.03625*grosspay);
+
+    netwage = grosspay - tax;
+
+
+
+    return netwage;
+
+}
+
