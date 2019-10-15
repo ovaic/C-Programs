@@ -1,0 +1,119 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <math.h>
+
+#include <windows.h>
+
+
+
+int main()
+
+
+
+{
+
+    COORD c;           //structure command
+
+    c.X=30;            //coordinates
+
+    c.Y=2;             //coordinates
+
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),c);
+
+
+
+    printf("Finding Initial Velocity and Distance via Equation of Motion\n");
+
+
+
+    float u,a,t,v,m,n,p,q,s;
+
+    char ch;
+
+
+
+    while (1) {
+
+    printf("\nEnter Initial Velocity: ");
+
+    scanf("%f",&u);
+
+
+
+    printf("\nEnter Acceleration: ");
+
+    scanf("%f",&a);
+
+
+
+    printf("\nEnter Time: ");
+
+    scanf("%f",&t);
+
+    getchar();
+
+
+
+    v = u + a*t;
+
+
+
+    printf("Total Final Velocity is: %f\n",v);
+
+
+
+    printf("Finding Distance Traveled Using 2nd Equation of Motion\n");
+
+
+
+    m = (v*v)-(u*u);
+
+    n = 2*a;
+
+    s = m/n;
+
+
+
+    printf("Total Distance traveled is: %f\n",s);
+
+
+
+    printf("Finding Distance Traveled Using 3nd Equation of Motion\n");
+
+
+
+    p = u*t;
+
+    q = .5*(a*(t*t));
+
+    s = p + q;
+
+
+
+    printf("Total Distance traveled is: %f\n",s);
+
+
+
+    printf("\nDo you wish to add more numbers (y/n): ");
+
+    scanf("%c", &ch);
+
+
+
+      if (ch == 'y' || ch == 'Y')
+
+         continue;
+
+      else
+
+          break;
+
+          }
+
+
+
+    return 0;
+
+}
