@@ -1,0 +1,79 @@
+#include <stdio.h>
+
+#include <math.h>
+
+void DrawUpwardTiangle();
+
+void DrawRectangle();
+
+void DrawDownwardTiangle();
+
+
+
+int main()
+
+{
+
+    DrawUpwardTiangle();
+
+    DrawRectangle();
+
+    printf("        \n");
+
+    printf("        \n");
+
+    printf("        \n");
+
+    DrawRectangle();
+
+    DrawDownwardTiangle();
+
+}
+
+
+
+void DrawUpwardTiangle()
+
+{
+
+        printf("     *    \n");
+
+        printf("    * *   \n");
+
+        printf("   * * *  \n");
+
+        printf("  * * * * \n");
+
+}
+
+void DrawRectangle()
+
+{
+
+        printf("  -------  \n");
+
+        printf("  -------  \n");
+
+        printf("  -------  \n");
+
+        printf("  -------  \n");
+
+}
+
+void DrawDownwardTiangle()
+
+{
+
+        printf("  * * * * \n");
+
+        printf("   * * *  \n");
+
+        printf("    * *   \n");
+
+        printf("     *    \n");
+
+        
+
+        return 0;
+
+}
