@@ -1,0 +1,133 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+
+
+int compute_net_salary(int hours,int rate);
+
+
+
+///11.1 MINE
+
+
+
+
+
+int main()
+
+{
+
+    int idnum=0,numh=0,hwr=0,sal=0,sent=1,hours=0,rate=0,salary=0,ave=0,empl=0,n=0;
+
+
+
+    printf("Number of employee: ");
+
+    scanf("%d",&empl);
+
+
+
+    while(n!=empl)
+
+    {
+
+    printf("\n\nEnter employee identification number: ");
+
+    scanf("%d",&idnum);
+
+
+
+    n++;
+
+
+
+    printf("\nEnter employee hourly wage rate: ");
+
+    scanf("%d",&hwr);
+
+
+
+    printf("\nEnter number of hours worked in a week: ");
+
+    scanf("%d",&numh);
+
+
+
+    salary=compute_net_salary(numh,hwr);
+
+
+
+    sal=sal+salary;
+
+
+
+    printf("\n________________________");
+
+
+
+    printf("\n\nEmployee Identification Number: %d",idnum);
+
+    printf("\n\nNet Salary: %d",salary);
+
+
+
+    printf("\n\n________________________");
+
+    }
+
+
+
+    ave=sal/empl;
+
+    printf("\n\nAverage salary is: %d",ave);
+
+
+
+    return 0;
+
+}
+
+
+
+int compute_net_salary(int hours,int rate)
+
+{
+
+    int nw=0,gp=0,ohrs=0,tax=0;
+
+
+
+    ohrs=hours-40;
+
+
+
+    if(ohrs<0)
+
+    {
+
+        gp=(hours*rate);
+
+    }
+
+    else
+
+    {
+
+        gp=(hours*rate)+(ohrs*rate*1.5);
+
+    }
+
+
+
+    tax=(0.03625*gp);
+
+    nw=gp-tax;
+
+
+
+    return nw;
+
+}
