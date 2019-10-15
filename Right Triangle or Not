@@ -1,0 +1,63 @@
+///If the three sides of a triangle are entered through the keyboard, 
+
+///write a program to check whether the triangle is a right-angled triangle or not. 
+
+///The sample output is given below. Note that the user does not have to specify exactly which side is base, 
+
+///perpendicular or hypotenuses. This means that you will have to check for all possible combinations of the 
+
+///3 sides to determine whether it is a right-angle triangle or not. 
+
+
+
+
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <math.h>
+
+
+
+int main()
+
+{
+
+    
+
+    int a,b,c;
+
+    printf("Input first side of triangle: ");
+
+    scanf("%d",&a);
+
+    printf("Input second side of triangle: ");
+
+    scanf("%d",&b);
+
+    printf("Input third side of triangle: ");
+
+    scanf("%d",&c);
+
+
+
+    if ((a==sqrt((b*b)+(c*c)))||(b==sqrt( (a*a)+(c*c)))||(c==sqrt( (b*b)+(a*a))))
+
+    {
+
+        printf("\nIt is a right angle triangle!");
+
+    }
+
+    else
+
+    {
+
+        printf("\nIt is not a right angle triangle!");
+
+    }
+
+    return 0;
+
+}    
