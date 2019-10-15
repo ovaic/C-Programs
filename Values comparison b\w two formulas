@@ -1,0 +1,117 @@
+///Write a program segment that computes 1 + 2 + 3 + . . . . . . .  (n - 1) + n,
+
+///where n is a data value. Follow the loop body with an if statement that com-pares this value to tn (n * (n+1) / 2)
+
+///and displays a message that indicates whether the values are the same or different.
+
+///Use of TWO FUNCTIONS was compulsory
+
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+int SummingUp(int n);
+
+double Formula_Calc(int n);
+
+
+
+
+
+int main()
+
+{
+
+    int n=0;
+
+    float add=0,sum=0;
+
+    printf("Enter an integer: ");
+
+    scanf("%d", & n);
+
+
+
+    add = SummingUp(n);
+
+
+
+    sum = Formula_Calc(n);
+
+
+
+    printf("%f\n",add);
+
+    printf("%f\n",sum);
+
+
+
+    if(add == sum)
+
+    {
+
+        printf("Values are same!");
+
+    }
+
+    else
+
+    {
+
+        printf("Different Answers!");
+
+    }
+
+    return 0;
+
+}
+
+
+
+int SummingUp(int a)
+
+{
+
+    int count = 1,p=0;
+
+
+
+    while(count != a)
+
+    {
+
+        p = p + count;
+
+        count++;
+
+    }
+
+    p = p + a;
+
+
+
+    return p;
+
+}
+
+
+
+double Formula_Calc(int calc)
+
+{
+
+    float ans = 0;
+
+
+
+    ans = ((calc * (calc + 1))/2);
+
+
+
+    return ans;
+
+}
+
