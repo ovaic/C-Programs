@@ -1,0 +1,70 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+
+
+
+
+int main ()
+
+{
+
+    ///Finding largest of 5 numbers
+
+    int a,b,c,d,e;
+
+
+
+    printf("Input 5 numbers: ");
+
+    scanf("%d %d %d %d %d",&a, &b, &c, &d, &e);
+
+
+
+    if (a>b && a>c && a>d && a>e)
+
+    {
+
+        printf("The largest number is a = %d",a);
+
+    }
+
+    else if (b>a && b>c && b>d && b>e)
+
+    {
+
+        printf("The largest number is b = %d",b);
+
+    }
+
+    else if (c>a && c>b && c>d && c>e)
+
+    {
+
+        printf("The largest number is c = %d",c);
+
+    }
+
+    else if (d>a && d>b && d>c && d>e)
+
+    {
+
+        printf("The largest number is d = %d",d);
+
+    }
+
+    else
+
+    {
+
+        printf("The largest number is e = %d",e);
+
+    }
+
+ return 0;
+
+}
+
