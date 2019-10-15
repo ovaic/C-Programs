@@ -1,0 +1,77 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <math.h>
+
+#include <windows.h>
+
+
+
+int main()
+
+{
+
+    COORD c;           //structure command
+
+    c.X=40;            //coordinates
+
+    c.Y=2;             //coordinates
+
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),c);
+
+
+
+    printf("Area and Perimeter of a Rectangle\n");
+
+
+
+    float a,b,Lenght,Width,Area,Perimeter;
+
+    char ch;
+
+
+
+    while (1) {         //while loop
+
+    printf("Enter length and width of rectangle: \n");
+
+    scanf("%f%f",&a,&b);
+
+    getchar();          //inputting one character to th screen
+
+
+
+    Area = a*b;
+
+    Perimeter = 2*(a+b);
+
+
+
+    printf("Area of rectangle is: %f\n",Area);
+
+    printf("Perimeter of rectangle is: %f\n",Perimeter);
+
+
+
+    printf("\nDo you wish to add more numbers (y/n): ");
+
+    scanf("%c", &ch);
+
+
+
+      if (ch == 'y' || ch == 'Y')
+
+         continue;
+
+      else
+
+          break;
+
+          }
+
+
+
+    return 0;
+
+}
