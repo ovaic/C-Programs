@@ -1,0 +1,95 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+ /// To find a factorial of seven given numbers
+
+ ///Then add them in a series ((1/factorial)+...)
+
+int fctl(int);
+
+
+
+int main()
+
+{
+
+    int f, cycle=1;
+
+    float total=0, fa=0;
+
+
+
+
+
+    while(cycle<=7)
+
+    {
+
+
+
+    printf("\a\nEnter a number to get its FACTORIAL: \n");
+
+    scanf("%d",&f);
+
+
+
+    fa=fctl(f);
+
+    printf("\nFactorial of given number is: %.0f\n",fa);
+
+
+
+    printf("\n-----------------------------------------------------");
+
+    total=total+(1/fa);
+
+    cycle=cycle+1;
+
+    }
+
+    printf("\n-----------------------------------------------------");
+
+    printf("\n---------");
+
+    printf("Sum of first seven terms is: %.4f",total);
+
+    printf("---------");
+
+    printf("\n-----------------------------------------------------");
+
+    printf("\n-----------------------------------------------------");
+
+
+
+    return 0;
+
+}
+
+int fctl(int num)
+
+{
+
+    int count=1, sum =1;
+
+
+
+    count=num +1;
+
+
+
+    while(count!=1)
+
+    {
+
+        sum=sum * (count-1);
+
+        count=count-1;
+
+    }
+
+    return sum;
+
+}
