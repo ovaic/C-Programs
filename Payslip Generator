@@ -1,0 +1,315 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <math.h>
+
+
+
+int main()
+
+{
+
+    int a,y,RP,HRA,SSA,GP,AI,AIT,MIT,GPF,DON,TD,NP;
+
+    char grade;
+
+
+
+    printf("Enter your grade, age and years of experience:  ");
+
+    scanf("%c%d%d",&grade,&a,&y);
+
+    printf("_________________________________________________________________");
+
+    printf("\nBasic Pay\n");
+
+    printf("__________________\n");
+
+
+
+
+
+    if (grade=='W' || grade=='w')
+
+    {
+
+        printf("\nBasic Salary:                     10000");
+
+        printf("\nNumber of Increments:             %d",y);
+
+
+
+        RP=10000+(y)*(700);
+
+        printf("\nRunning pay:                      %d",RP);
+
+
+
+        printf("\n\nAllowances");
+
+        printf("\n________________\n");
+
+
+
+        HRA=RP*0.45;
+
+        SSA=10000 *0.3;
+
+
+
+        printf("\nHouse Rent Allowance:             %d",HRA);
+
+        printf("\nSocial Security Benefit:          %d",SSA);
+
+
+
+        if (a>40)
+
+        {
+
+            printf("\nAdhoc Relief Allowance:           3000");
+
+            GP=RP+HRA+SSA+3000;
+
+            printf("\n\nGross Pay:                        %d",GP);
+
+        }
+
+        else
+
+        {
+
+            printf("\nAdhoc Relief Allowance:           1500");
+
+            GP=RP+HRA+SSA+1500;
+
+            printf("\n\nGross Pay:                        %d",GP);
+
+        }
+
+    }
+
+    else if (grade=='X' || grade=='x')
+
+    {
+
+        printf("\nBasic Salary:                     12900");
+
+        printf("\nNumber of Increments:             %d",y);
+
+
+
+
+
+        RP=12900+(y)*(910);
+
+        printf("\nRunning pay:                      %d",RP);
+
+
+
+        printf("\n\nAllowances");
+
+        printf("\n________________\n");
+
+
+
+
+
+        HRA=RP*0.45;
+
+        SSA=12900*0.3;
+
+        printf("\nHouse Rent Allowance:             %d",HRA);
+
+        printf("\nSocial Security Benefit:          %d",SSA);
+
+        printf("\nAdhoc Relief Allowance:           1500");
+
+
+
+
+
+        GP=RP+HRA+SSA+1500;
+
+        printf("\n\nGross Pay:                        %d",GP);
+
+    }
+
+       else if (grade=='Y' || grade=='y')
+
+    {
+
+        printf("\nBasic Salary:                     21700");
+
+        printf("\nNumber of Increments:             %d",y);
+
+
+
+        RP=21700+(y)*(1500);
+
+        printf("\nRunning pay:                      %d",RP);
+
+
+
+
+
+        printf("\n\nAllowances");
+
+        printf("\n________________");
+
+
+
+        HRA=RP*0.45;
+
+        SSA=21700*0.3;
+
+        printf("\nHouse Rent Allowance:             %d",HRA);
+
+        printf("\nSocial Security Benefit:          %d",SSA);
+
+        printf("\nAdhoc Relief Allowance:           1500");
+
+
+
+        GP=RP+HRA+SSA+1500;
+
+        printf("\n\nGross Pay:                        %d",GP);
+
+    }
+
+       else if (grade=='Z' || grade=='z')
+
+    {
+
+        printf("\nBasic Salary:                     32600");
+
+        printf("\nNumber of Increment               %d",y);
+
+
+
+        RP=32600+(y)*(2800);
+
+        printf("\nRunning pay:                      %d",RP);
+
+
+
+        printf("\n\nAllowances");
+
+        printf("\n__________________");
+
+
+
+        HRA=RP*0.45;
+
+        SSA=32600*0.3;
+
+        printf("\nHouse Rent Allowance:             %d",HRA);
+
+        printf("\nSocial Security Benefit:          %d",SSA);
+
+        printf("\nAdhoc Relief Allowance:           1500");
+
+
+
+        GP=RP+HRA+SSA+1500;
+
+        printf("\n\nGross Pay:                        %d",GP);
+
+    }
+
+    printf("\n\nDeductions");
+
+    printf("\n__________________\n");
+
+
+
+    AI=GP*12;
+
+
+
+    if (AI>=0 && AI<=400000)
+
+    {
+
+        MIT=0;
+
+        printf("\nIncome Tax <at 0%>:                %d",MIT);
+
+    }
+
+    else if (AI>=400001 && AI<=650000)
+
+    {
+
+        AIT=AI*0.025;
+
+        MIT=AIT/12;
+
+        printf("\nIncome Tax <at 2.5%>:               %d",MIT);
+
+    }
+
+    else if (AI>=650001 && AI<=1000000)
+
+    {
+
+        AIT=AI*0.0475;
+
+        MIT=AIT/12;
+
+        printf("\nIncome Tax <at 4.75>:               %d",MIT);
+
+    }
+
+    else if (AI>=1000001 && AI<=1500000)
+
+    {
+
+        AIT=AI*0.07;
+
+        MIT=AIT/12;
+
+        printf("\nIncome Tax <at 0.07%>:              %d",MIT);
+
+    }
+
+    else if (AI>=1500001)
+
+    {
+
+        AIT=AI*0.115;
+
+        MIT=AIT/12;
+
+        printf("\nIncome Tax <at 0.115%>:              %d",MIT);
+
+    }
+
+
+
+    GPF=GP*0.10;
+
+    DON=GP%100;
+
+    printf("\nGeneral Provident Fund:           %d",GPF);
+
+    printf("\nDonations:                        %d",DON);
+
+
+
+    TD=MIT+GPF+DON;
+
+    NP=GP-TD;
+
+    printf("\n\nTotal Deductions:                 %d",TD);
+
+    printf("\n\n\n\nNET PAY:                          %d",NP);
+
+
+
+    getch();
+
+    return 0;
+
+}
