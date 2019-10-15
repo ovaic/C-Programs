@@ -1,0 +1,195 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+//Use of while is not necessary if statement can also be used
+
+
+
+int main()
+
+{
+
+    /*
+
+    int sec,min,hours,n=1,x=60;
+
+    printf("Enter seconds : ");
+
+    scanf("%d",&sec);
+
+    min=sec/60;
+
+    while (n<=min)
+
+    {
+
+        sec=sec%x;
+
+        x=x+60
+
+        n++;
+
+    }
+
+    n=0;
+
+    hours=min/60;
+
+    while (n<=hours)
+
+    {
+
+        min = min % 60;
+
+        n++;
+
+    }
+
+    printf("Hours, minutes and seconds = %d %d %d",hours,min,sec);
+
+    */
+
+
+
+    /*
+
+    ///Finding largest of 5 numbers
+
+    int a,b,c,d,e;
+
+
+
+    printf("Input 5 numbers: ");
+
+    scanf("%d %d %d %d %d",&a, &b, &c, &d, &e);
+
+
+
+    if (a>b && a>c && a>d && a>e)
+
+    {
+
+        printf("The largest number is a = %d",a);
+
+    }
+
+    else if (b>a && b>c && b>d && b>e)
+
+    {
+
+        printf("The largest number is b = %d",b);
+
+    }
+
+    else if (c>a && c>b && c>d && c>e)
+
+    {
+
+        printf("The largest number is c = %d",c);
+
+    }
+
+    else if (d>a && d>b && d>c && d>e)
+
+    {
+
+        printf("The largest number is d = %d",d);
+
+    }
+
+    else
+
+    {
+
+        printf("The largest number is e = %d",e);
+
+    }
+
+    */
+
+
+
+    ///To covert SECONDS in Days:Hours:Minutes:Seconds
+
+    int input=0, min=0, sec=0, hrs=0, day=0;
+
+
+
+    printf("Input seconds: ");
+
+    scanf("%d",&input);
+
+
+
+
+
+    if (input>=60)
+
+    {
+
+        min=input/60;
+
+        sec=input%60;
+
+    }
+
+    else
+
+    {
+
+        min=0;
+
+        sec=input;
+
+    }
+
+    if (min>=60)
+
+    {
+
+        hrs=min/60;
+
+        min=min%60;
+
+    }
+
+    else
+
+    {
+
+        hrs=0;
+
+        min=min;
+
+    }
+
+    if (hrs>=24)
+
+    {
+
+        day=hrs/60;
+
+        hrs=hrs%60;
+
+    }
+
+    else
+
+    {
+
+        day=0;
+
+    }
+
+
+
+    printf("Days:Hours:Minutes:Seconds = %d:%d:%d:%d",day,hrs,min,sec);
+
+
+
+    return 0;
+
+}
