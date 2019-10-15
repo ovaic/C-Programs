@@ -1,0 +1,111 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <math.h>
+
+
+
+double quadratic_roots(float a,float b,float c);
+
+
+
+int main()
+
+{
+
+    float a=0,b=0,c=0,p_root=0;
+
+
+
+    printf("Enter the three roots: ");
+
+    scanf("%f %f %f", &a, &b ,&c);
+
+
+
+    p_root = quadratic_roots(a,b,c);
+
+
+
+    if(p_root<=0)
+
+    {
+
+        printf("Negative Discriminant and no positive roots!");
+
+    }
+
+    else
+
+    {
+
+        printf("Answer for the positive root is: %.2f", p_root);
+
+    }
+
+    return 0;
+
+}
+
+
+
+double quadratic_roots(float n1, float n2, float n3)
+
+{
+
+    float disc=0,root1=0,root2=0,ans=0;
+
+
+
+    ans = (pow(n2,2))-(4*n1*n3);
+
+
+
+    if (ans<0)
+
+    {
+
+        return 0;
+
+    }
+
+    else
+
+    {
+
+      disc = sqrt(ans);
+
+      root1 = (-n2+disc)/(2*n1);
+
+      root2 = (-n2-disc)/(2*n1);
+
+
+
+      if ((root1>0) && (root2<0))
+
+        {
+
+           return root1;
+
+        }
+
+       else if ((root2>0) && (root1<0))
+
+        {
+
+           return root2;
+
+        }
+
+        else
+
+        {
+
+            return 0;
+
+        }
+
+    }
+
+}
