@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+///Program to calculate table of any number
+
+int main()
+
+{
+
+    int X,n1,n2,a;
+
+    ///X= the table of number you want, n1 & n2 are the limits
+
+    printf("Enter values of X,n1,n2: \n");
+
+    scanf("%d%d%d",&X,&n1,&n2);
+
+    ///while loop
+
+    while(n1<=n2)
+
+    {
+
+        a=X*n1;
+
+        printf("%d * %d = %d\n",X,n1,a);
+
+        n1++;
+
+    }
+
+
+
+return 0;
+
+}
