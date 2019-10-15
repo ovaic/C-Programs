@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+#include <math.h>
+
+
+
+int main()
+
+{
+
+    int a,r,u,num;
+
+    
+
+    printf("Input 3 numbers: ");
+
+    scanf("%d %d %d",&a,&r,&u);
+
+    
+
+    if (r>1)
+
+    {
+
+        num==(a*pow(r,u)-a/(r-1));
+
+        printf("Answer is %d",num);
+
+    }
+
+    else if (r<1)
+
+    {
+
+            num==(a-a*pow(r,u)/(1-r));
+
+            printf("Answer is %d",num);
+
+    }
+
+    else
+
+        printf("Error");
+
+
+
+    return 0;
+
+
+
+}
