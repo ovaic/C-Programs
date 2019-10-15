@@ -1,0 +1,83 @@
+///To find greater number
+
+///TASK: Write down a function, which receives 2 non-zero integer parameters and
+
+///returns the larger of the 2 numbers. The function should return 0 if both the integers are equal.
+
+///Use of FUNCTION is must!
+
+
+
+///NO FORMATTED OUTPUTS!!
+
+
+
+int greater_then(int a,int b);
+
+
+
+int main()
+
+{
+
+    int a,b,c;
+
+    printf("Enter two non-zero integers: \n");
+
+    scanf("%d %d", &a, &b);
+
+
+
+    c= greater_then(a,b);
+
+    if(c==0)
+
+    {
+
+        printf("Both integers are same or equal to zero");
+
+    }
+
+    else
+
+    {
+
+        printf("Larger number is: %d",c);
+
+    }
+
+    return 0;
+
+}
+
+
+
+int greater_then(int a,int b)
+
+{
+
+    if((a!=0) && (b!=0) && (a>b))
+
+    {
+
+        return a;
+
+    }
+
+    else if((a!=0) && (b!=0) && (b>a))
+
+    {
+
+        return b;
+
+    }
+
+    else if((a!=0) && (b!=0) && (a==b))
+
+    {
+
+        return 0;
+
+    }
+
+}
