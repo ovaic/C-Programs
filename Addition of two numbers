@@ -1,0 +1,33 @@
+include <stdio.h>
+
+#include <stdlib.h>
+
+#include <math.h>
+
+
+
+int main()
+
+{
+
+
+
+    int num1,num2,Sum;
+
+    printf("Enter two numbers for addition:\n");
+
+    scanf("%d%d",&num1,&num2);
+
+    getchar();
+
+
+
+    Sum = num1 + num2;
+
+    printf("Sum of the numbers is = %d",Sum);
+
+
+
+    return 0;
+
+}
