@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#define SENTINEL -1
+
+///How to calculate Body Mass Index
+///Body Mass Index is a simple calculation using a person’s height and weight.
+///The formula is BMI = kg/m2 where kg is a person’s weight in kilograms
+///and m2 is their height in metres squared.
+
+///BMI Categories:
+///Underweight = <18.5
+///Normal weight = 18.5–24.9
+///Overweight = 25–29.9
+///Obesity = BMI of 30 or greater
+
+int main()
+{
+    int n;
+    float weight, height, BMI=0;
+
+    for (n=0; n != SENTINEL; scanf("%d",&n) )
+    {
+        printf("\nEnter weight in kilograms: ");
+        scanf("%f",&weight);
+
+        printf("\nEnter height in meters: ");
+        scanf("%f",&height);
+
+        BMI = weight/pow(height,2);
+
+        printf("\nYour BMI is: %4.1f\n",BMI);
+
+        if (BMI>=0 && BMI<18.5)
+        {
+            printf("\nUnderweight");
+        }
+        else if (BMI>=18.5 && BMI <=24.9)
+        {
+            printf("\nNormal Weight");
+        }
+        else if (BMI>=25 && BMI <=29.9)
+        {
+            printf("\nOver Weight");
+        }
+        else if (BMI>=30)
+        {
+            printf("\nObesity");
+        }
+
+        printf("\n\nTo CONTINUE type any number\nAnd\nTo EXIT type (-1)\n");
+    }
+
+
+    return 0;
+}
