@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#define sentinal -1
+
+///Probability Calculator
+///Program to find the Combinations, Permutations & Multiplication of two inputs
+
+int validateInput();
+int fctl(int);
+
+int main()
+{
+    int n,r,u,t,p,q,v,z,x,mul=0,nCr=0,nPr=0;
+    printf("For finding nCr & nPr please enter n >= r >= 0\n");
+
+    n = validateInput();
+
+    r = validateInput();
+
+    u = n - r;
+
+    printf("\nPress 1 for multiplication");
+    printf("\nPress 2 for finding nCr");
+    printf("\nPress 3 for finding nPr");
+    printf("\nPress -1 for Exit\n");
+
+    scanf("%d",&t);
+    for (t; t != sentinal; scanf("%d",&t) )
+    {
+        if (t == 1)
+        {
+            mul = n * r;
+
+            printf("\nMultiplication of %d & %d is= %d\n",n,r,mul);
+            printf("\nPress 1 for multiplication");
+            printf("\nPress 2 for finding nCr");
+            printf("\nPress 3 for finding nPr");
+            printf("\nPress -1 for Exit\n");
+        }
+        else if (t == 2)
+        {
+            p = fctl(n);
+            q = fctl(r);
+            v = fctl(u);
+
+            nCr = p/(q*v);
+
+            printf("\nCombinations of %d & %d are= %d\n",n,r,nCr);
+            printf("\nPress 1 for multiplication");
+            printf("\nPress 2 for finding nCr");
+            printf("\nPress 3 for finding nPr");
+            printf("\nPress -1 for Exit\n");
+        }
+        else if (t == 3)
+        {
+            x = fctl(n);
+            z = fctl(u);
+
+            nPr = x/z;
+
+            printf("\nPermutations of %d & %d are= %d\n",n,r,nPr);
+            printf("\nPress 1 for multiplication");
+            printf("\nPress 2 for finding nCr");
+            printf("\nPress 3 for finding nPr");
+            printf("\nPress -1 for Exit\n");
+        }
+
+    }
+
+}
+int validateInput()
+{
+    int a;
+    do
+    {
+        scanf("%d",&a);
+
+    }while (!(a>0));
+    return a;
+}
+int fctl(int num)
+{
+    int count=1, fact =1;
+
+    count = num + 1;
+    while(count != 1)
+    {
+        fact = fact * (count-1);
+        count = count-1;
+    }
+    return fact;
+}
