@@ -26,7 +26,7 @@ int main()
     printf("\nPress -1 for Exit\n");
 
     scanf("%d",&t);
-    for (t; t != sentinal; scanf("%d",&t) )
+    for (t; t != sentinal; scanf("%d",&t) )                            ///FOR Loop using sentinal value -1
     {
         if (t == 1)
         {
@@ -69,7 +69,7 @@ int main()
     }
 
 }
-int validateInput()
+int validateInput()                      ///Function for input validation
 {
     int a;
     do
@@ -79,7 +79,7 @@ int validateInput()
     }while (!(a>0));
     return a;
 }
-int fctl(int num)
+int fctl(int num)                       ///Function for factorial
 {
     int count=1, fact =1;
 
