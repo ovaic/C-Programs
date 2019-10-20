@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdio.h>
+
+///Given two numbers multiply them using the following method.
+///Successively divide the smaller number by 2 (ignore any remainder) until the quotient is 1
+///and multiple the larger number by 2.
+///Add to a total only those multiples of the larger which correspond to an odd quotient of the smaller.
+
+int main()
+{
+    int a, b, y, x, res = 0;
+
+    printf("Enter first number: ");
+    scanf("%d", &a);
+
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    y = a;
+    x = b;
+
+    while(x > 0)
+    {
+        if(x % 2 != 0)
+        {
+            res = res + y;
+        }
+
+        y = y * 2;
+        x = x / 2;
+    }
+
+    printf("Total of %d * %d is
+
+           = %d", a, b, res);
+
+    return 0;
+}
