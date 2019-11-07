@@ -6,22 +6,16 @@ int searchInArray(int myArray[], int search_key);
 int main()
 {
     int search_key=0, x=0, size=0;
-    printf("enter size of array\n");
-    scanf("%d",&size);
-    int myArray[size];
+    
+    int myArray[5]={1,2,3,4,5};
 
-    for(int i=0;i<size;i=i+1)
-    {
-        printf("enter elements of array\n");
-        scanf("%d",&myArray[i]);
-    }
-    while(search_key!=-1)
-    {
+    
+   
+    
         printf("\nHello user enter any input to search\n");
         scanf("%d",&search_key);
 
-        if(search_key!=-1)
-        {
+       
             x=searchInArray(myArray, search_key);
 
             if(x==0)
@@ -32,14 +26,14 @@ int main()
             {
                 printf("\nsearch_key value found");
             }
-        }
-    }
+        
+    
     return 0;
 }
 int searchInArray(int mrray[], int sec_key)
 {
 
-    for(int i=0;i<10;i++)
+    for(int i=0;i<5;i++)
     {
         if(sec_key==mrray[i])
         {
