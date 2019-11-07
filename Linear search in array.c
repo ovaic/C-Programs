@@ -17,18 +17,21 @@ int main()
     }
     while(search_key!=-1)
     {
-        printf("Hello user enter any input to search\n");
+        printf("\nHello user enter any input to search\n");
         scanf("%d",&search_key);
 
-        x=searchInArray(myArray, search_key);
+        if(search_key!=-1)
+        {
+            x=searchInArray(myArray, search_key);
 
-        if(x==0)
-        {
-            printf("\nsearch_key value not found");
-        }
-        else if(x==1)
-        {
-            printf("\nsearch_key value found");
+            if(x==0)
+            {
+                printf("\nsearch_key value not found");
+            }
+            else if(x==1)
+            {
+                printf("\nsearch_key value found");
+            }
         }
     }
     return 0;
