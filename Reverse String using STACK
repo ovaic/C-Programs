@@ -1,0 +1,78 @@
+///Write a program to reverse string using stack
+/*
+#include<stdio.h>
+#include<string.h>
+#define MAX 100
+
+void reverseSTR(char str[], char Rstr[]);
+void push(char stack[], char x, int *tp);
+char pop();
+int isFull(char stack[], int *tp);
+int isEmpty(char stack[], int *tp);
+
+int main()
+{
+    char str[MAX], Rstr[MAX];
+    printf("Input a string: ");
+    gets(str);
+
+    reverseSTR(str, Rstr);
+    printf("\nReverse string: %s\n", Rstr);
+
+    return 0;
+}
+
+void reverseSTR(char str[], char Rstr[])
+{
+    char stack[MAX], x, y;
+    int top = -1, *tp = &top, j = 0;
+
+    for(int i = 0; str[i] != '\0'; i++)
+    {
+        x = str[i];
+        push(stack, x, tp);
+    }
+   while(*tp != -1)
+    {
+        y = pop(stack, tp);
+        Rstr[j++] = y;
+    }
+    Rstr[j] = '\0';
+}
+
+void push(char stack[], char x, int *tp)
+{
+    if(isFull(stack, tp))
+    {
+        printf("Stack is FULL\n");
+    }
+    else
+    {
+        *tp = *tp + 1;
+        stack[*tp] = x;
+    }
+}
+
+char pop(char stack[], int *tp)
+{
+    if(isEmpty(stack, tp))
+    {
+        printf("Stack is EMPTY\n");
+    }
+    else
+    {
+        char u = stack[*tp];
+        *tp = *tp - 1;
+        return u;
+    }
+}
+
+int isFull(char stack[], int *tp)
+{
+    return (*tp == MAX - 1);
+}
+
+int isEmpty(char stack[], int *tp)
+{
+    return (*tp == -1);
+}
