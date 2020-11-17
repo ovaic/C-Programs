@@ -1,0 +1,99 @@
+///Write a program to check string is palindrome or not by using stack
+
+//Program Explanation
+//1. Take a string as input and store it in the array s[].
+//2. Load each character of the array s[] into the array stack[].
+//3. Use variables front and top to represent the last and top element of the array stack[].
+//4. Using for loop compare the top and last element of the array stack[].
+//   If they are equal, then delete the top element, increment the variable front by 1 and compare again.
+//5. If they are not equal, then print the output as “It is not a palindrome”.
+//6. Compare the elements in the steps 4-5 up to the middle element of the array stack[].
+//7. If every characters of the array is equal, then it is a palindrome.
+
+#include<stdio.h>
+#include<string.h>
+#define MAX 100
+
+void palindromeTEST(char str[]);
+void push(char stack[], char x, int *tp);
+char pop();
+int isFull(char stack[], int *tp);
+int isEmpty(char stack[], int *tp);
+
+int main()
+{
+    char str[MAX];
+    printf("Input a string: ");
+    gets(str);
+
+    palindromeTEST(str);
+
+    return 0;
+}
+
+void palindromeTEST(char str[])
+{
+    char stack[MAX], x, y;
+    int top = -1, *tp = &top, j = 0, front = 0;
+
+    for(int i = 0; str[i] != '\0'; i++)
+    {
+        x = str[i];
+        push(stack, x, tp);
+    }
+    while(j < (strlen(str)/2))
+    {
+        if(stack[*tp] == stack[front])
+        {
+            pop(stack, tp);
+            front++;
+        }
+        else
+        {
+            printf("\nString \"%s\" is not PALINDROME\n", str);
+            break;
+        }
+        j++;
+    }
+    if((strlen(str)/2) == front)
+    {
+        printf("\nString \"%s\" is PALINDROME\n", str);
+    }
+}
+
+void push(char stack[], char x, int *tp)
+{
+    if(isFull(stack, tp))
+    {
+        printf("Stack is FULL\n");
+    }
+    else
+    {
+        *tp = *tp + 1;
+        stack[*tp] = x;
+    }
+}
+
+char pop(char stack[], int *tp)
+{
+    if(isEmpty(stack, tp))
+    {
+        printf("Stack is EMPTY\n");
+    }
+    else
+    {
+        char u = stack[*tp];
+        *tp = *tp - 1;
+        return u;
+    }
+}
+
+int isFull(char stack[], int *tp)
+{
+    return (*tp == MAX - 1);
+}
+
+int isEmpty(char stack[], int *tp)
+{
+    return (*tp == -1);
+}
