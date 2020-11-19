@@ -1,0 +1,168 @@
+///Algorithm:
+
+//Input the expression and put it in a character stack.
+//Scan the characters from the expression one by one.
+//If the scanned character is a starting bracket ( ‘ ( ‘ or ‘ { ‘ or ‘ [ ‘), then push it to the stack.
+//If the scanned character is a closing bracket ( ‘ ) ’ or ‘ } ’ or ‘ ] ’ ),
+//then pop from the stack and if the popped character is the equivalent starting bracket,
+//then proceed. Else, the expression is unbalanced.
+//After scanning all the characters from the expression, if there is any parenthesis found
+//in the stack or if the stack is not empty, then the expression is unbalanced.
+//Now, let us see a program to check balanced parentheses in the given expression.
+
+#include <stdio.h>
+#include <string.h>
+#define max 100
+
+int top = -1;
+char stack[max];
+
+void checkEXP(char str[])
+{
+     for(int i = 0;i < strlen(str);i++)
+    {
+        if(str[i] == '(' || str[i] == '[' || str[i] == '{')
+        {
+            push(str[i]); /// Push the open bracket
+            continue;
+        }
+        else if(str[i] == ')' || str[i] == ']' || str[i] == '}') // If a closed bracket is encountered
+        {
+            if(str[i] == ')')
+            {
+                if(stack[top] == '(')
+                {
+                    pop(); /// Pop the stack until closed bracket is found
+                }
+                else
+                {
+                    printf("\nUNBALANCED EXPRESSION\n");
+                    break;
+                }
+            }
+            if(str[i] == ']')
+            {
+                if(stack[top] == '[')
+                {
+                    pop(); /// Pop the stack until closed bracket is found
+                }
+                else
+                {
+                    printf("\nUNBALANCED EXPRESSION\n");
+                    break;
+                }
+            }
+            if(str[i] == '}')
+            {
+                if(stack[top] == '{')
+                {
+                    pop(); /// Pop the stack until closed bracket is found
+                }
+                else
+                {
+                    printf("\nUNBALANCED EXPRESSION\n");
+                    break;
+                }
+            }
+        }
+    }
+
+    if(top == -1)
+    {
+        printf("\nBALANCED EXPRESSION\n"); /// Finally if the stack is empty, display that the expression is balanced
+    }
+
+}
+
+void push(char x)
+{
+      /// Push(Inserting Element in stack)
+      if(top == max-1)
+      {
+          printf("stack is FULL!");
+      }
+      else
+      {
+          top = top + 1;
+          stack[top] = x;
+      }
+}
+
+void pop()
+{
+    /// Pop (Removing element from stack)
+      if(top == -1)
+      {
+          printf("stack is EMPTY!");
+      }
+      else
+      {
+          top = top - 1;
+      }
+}
+
+void indentation(char str[])
+{
+    for(int p = 0; p < strlen(str); p++)
+    {
+        if(str[p] == '(' || str[p] == '[' || str[p] == '{')                       ///    [(1+2)]
+        {
+            if(str[p-1] == '(' || str[p-1] == '[' || str[p-1] == '{' )
+            {
+                push(str[p]);                                                       ///    [({c-d*e})]
+                printf("%c", str[p]);
+                spaces();
+                continue;
+            }
+            else
+            {
+                spaces();                                                             ///     1+(2)-[4*5]
+                push(str[p]);
+                printf("%c", str[p]);
+                spaces();
+                continue;
+            }
+        }
+        if(str[p] == ')' || str[p] == ']' || str[p] == '}')
+        {
+            pop();
+            spaces();
+            printf("%c", str[p]);
+            continue;
+        }
+        if(str[p] != ')' || str[p] != ']' || str[p] != '}')
+        {
+            if(str[p-1] == ')' || str[p-1] == ']' || str[p-1] == '}')
+            {
+                if(str[p] == '+' || str[p] == '-' || str[p] == '*' || str[p] == '/' || str[p] == '^')
+                {
+                    spaces();
+                    printf("%c", str[p]);
+                    continue;
+                }
+            }
+            printf("%c", str[p]);
+        }
+    }
+}
+
+void spaces()
+{
+    printf("\n");
+    for(int t = 0; t <= top; t++)
+    {
+        printf("\t");
+    }
+}
+
+int main()
+{
+    char str[max];
+    printf("Input Arithmetic Expression (with no spaces): ");
+    gets(str);
+
+    checkEXP(str);      //Checking whether the expression is balanced or not
+    indentation(str);   //Giving proper spacing as required in the Qs
+
+    return 0;
+}
